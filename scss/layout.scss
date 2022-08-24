@@ -1,0 +1,462 @@
+@import "vars";
+@import "mixin";
+
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #111;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#header {
+  .gnb {
+    z-index: 3;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    height: auto;
+    margin-top: 80px;
+    h2 {
+      flex-basis: 10%;
+      font-size: 27px;
+      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      font-family: "Playfair Display", serif !important;
+      cursor: pointer;
+      &:hover {
+        color: #111;
+        font-weight: 500;
+      }
+    }
+    .language {
+      height: 30px;
+      flex-basis: 20%;
+      font-size: 15px;
+      color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .lanSel {
+        color: #fff;
+      }
+      span {
+        margin-right: 15px;
+      }
+    }
+    .headerList {
+      color: #fff;
+      flex-basis: 50%;
+      display: flex;
+      justify-content: flex-end;
+      > li {
+        font-size: 15px;
+        margin-right: 35px;
+        &:last-child {
+          margin: 0;
+        }
+        &:hover {
+          .depth01 {
+            color: $main-color;
+            &:after {
+              display: block;
+            }
+          }
+          .depth02 {
+            display: block;
+          }
+        }
+        .depth01 {
+          position: relative;
+          transition: all 0.2s ease;
+          &:after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            left: 0;
+            background-color: $main-color;
+            bottom: -5px;
+            position: absolute;
+            display: none;
+          }
+
+          &.color {
+            color: $main-color;
+            &:after {
+              display: block;
+            }
+          }
+        }
+        .depth02 {
+          cursor: pointer;
+          margin-top: 20px;
+          display: none;
+          li {
+            margin-top: 15px;
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+    }
+    &.black {
+      h2,
+      .language {
+        color: #aaa;
+      }
+      .language .lanSel {
+        color: #555;
+      }
+      .headerList {
+        opacity: 0;
+      }
+    }
+  }
+
+  .width770span {
+    position: absolute;
+    right: 8%;
+    z-index: 10;
+    top: 8%;
+    transition: all 0.35s ease-in-out;
+    display: none;
+    p {
+      width: 50px;
+      height: 1.5px;
+      background-color: #fff;
+      &:nth-child(2) {
+        margin-top: 15px;
+      }
+    }
+  }
+  .book {
+    display: flex;
+    position: absolute;
+    left: 0%;
+    top: 0;
+    display: none;
+    z-index: 101;
+    transition: all 0.35s ease-in-out;
+    .bookLeft {
+      width: 550px;
+      height: 100vh;
+      background-color: #f0f0f0;
+      h1 {
+        font-size: 25px;
+        padding: 60px;
+        line-height: 1.2;
+        font-family: "Playfair Display", serif !important;
+      }
+
+      .bookList {
+        display: flex;
+        flex-direction: column;
+        margin-left: 21%;
+        margin-top: 14%;
+        .checkinout {
+          display: flex;
+          margin-bottom: 55px;
+          position: relative;
+          .date,
+          .date02 {
+            outline: none;
+            border: none;
+            background: none;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+          }
+          &:before {
+            content: "날짜";
+            position: absolute;
+            font-size: 12px;
+            top: -19px;
+            color: $main-color;
+          }
+        }
+        > li {
+          margin-bottom: 55px;
+          position: relative;
+          width: 340px;
+          &.arrow {
+            &:after {
+              transform: rotate(180deg);
+              transform-origin: 57% 212%;
+            }
+          }
+          &:after {
+            content: url("../images/layout/outline_expand_more_black_24dp.png");
+            // background-color: #f00;
+            position: absolute;
+            width: 20px;
+            height: 5px;
+            right: 20px;
+            top: 10%;
+          }
+          &:nth-child(1) {
+            &:before {
+              content: "호텔선택";
+              position: absolute;
+              font-size: 12px;
+              top: -19px;
+              color: $main-color;
+            }
+          }
+          &:nth-child(2) {
+            &:before {
+              content: "날짜";
+              position: absolute;
+              font-size: 12px;
+              top: -19px;
+              color: $main-color;
+            }
+          }
+          &:nth-child(3) {
+            &:before {
+              content: "객실수";
+              position: absolute;
+              font-size: 12px;
+              top: -19px;
+              color: $main-color;
+            }
+          }
+          &:nth-child(4) {
+            &:before {
+              content: "성인";
+              position: absolute;
+              font-size: 12px;
+              top: -19px;
+              color: $main-color;
+            }
+          }
+          &:nth-child(5) {
+            &:before {
+              content: "아동";
+              position: absolute;
+              font-size: 12px;
+              top: -19px;
+              color: $main-color;
+            }
+          }
+        }
+        select {
+          transition: all 0.15s ease-in-out;
+          cursor: pointer;
+          appearance: none;
+          width: 340px;
+          border: none;
+          border-bottom: 1px solid #ddd;
+          font-family: inherit;
+          height: 30px;
+          font-size: 15px;
+          background: none;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      button {
+        width: 350px;
+        height: 40px;
+        border: none;
+        background-color: #a68164;
+        margin-left: 110px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+    .bookRight {
+      width: 100px;
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      .bRspan {
+        position: absolute;
+        top: 5%;
+        right: 10%;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        span {
+          width: 26px;
+          height: 1px;
+          background-color: #111;
+          position: absolute;
+        }
+        span:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        span:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+        &:hover {
+          span {
+            transform: rotate(0deg);
+            transition: all 0.25s ease-in-out;
+          }
+        }
+      }
+      h3 {
+        writing-mode: vertical-rl;
+        font-size: 19px;
+        letter-spacing: 5px;
+        transform: scale(-1);
+        margin-right: 15px;
+        font-weight: 300;
+      }
+      span {
+        writing-mode: vertical-rl;
+        transform: scale(-1);
+        font-size: 10px;
+        color: $main-color;
+      }
+    }
+  }
+  .width770 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    top: 0;
+    z-index: 3;
+    display: none;
+    .in {
+      .in_con {
+        display: flex;
+        border: 1px solid #000;
+        height: 100px;
+        width: 90vw;
+        margin: 5% 5% 0;
+        box-sizing: border-box;
+        background-image: url("../images/layout/intro_logo.png");
+        background-size: 20% 50%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        h1 {
+          color: #111;
+          font-size: 23px;
+          font-family: "Playfair Display", serif !important;
+          margin-left: 5%;
+          margin-top: 5%;
+        }
+        button {
+          position: absolute;
+          right: 33px;
+          width: 12%;
+          height: 100px;
+          background-color: #000;
+          p {
+            width: 50px;
+            margin-left: 14%;
+            height: 8px;
+            border-bottom: 3px solid #fff;
+          }
+        }
+      }
+      .in02 {
+        border: 1px solid #000;
+        margin: 0 5%;
+        height: 66vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 78px;
+        .in_lan {
+          position: absolute;
+          right: 20%;
+          display: flex;
+          font-size: 27px;
+          font-weight: 300;
+          p {
+            margin-right: 45%;
+          }
+        }
+        .in_list {
+          ul {
+            line-height: 50px;
+            margin-top: 20%;
+            margin-left: 7%;
+            .in_li01 {
+              a {
+                font-size: 40px;
+              }
+              ul {
+                width: 30%;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+                li {
+                  a {
+                    font-size: 22px;
+                    line-height: 33px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .in_bot {
+          ul {
+            line-height: 45px;
+            margin-top: 5%;
+            margin-left: 7%;
+            font-size: 26px;
+            font-weight: 300;
+          }
+        }
+        .in_icon {
+          position: absolute;
+          right: 25%;
+          display: flex;
+          bottom: 15%;
+
+          .fa {
+            transform: rotate(90deg);
+            margin-right: 140%;
+            img {
+              filter: invert(100);
+              width: 20px;
+              height: 20px;
+            }
+          }
+          .in {
+            transform: rotate(90deg);
+            img {
+              filter: invert(100);
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and(max-width:770px) {
+  #header {
+    .width770span {
+      display: block;
+    }
+    .gnb {
+      justify-content: space-between;
+      h2 {
+        margin-left: 10%;
+      }
+      .language {
+        display: none;
+      }
+      .headerList {
+        display: none;
+      }
+    }
+  }
+}
