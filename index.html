@@ -845,14 +845,12 @@
     });
 
     $("#main").fullpage({
-      // navigation
       navigation: true,
       navigationTooltips: ["Home", "Gyeongju", "Ulsan", "Mokpo", "Pohang", "Jeonju", "Seamarq", "Offers", "Instagram", "Club Lahan"],
       showActiveTooltip: true,
 
       //scroll
       scrollingSpeed: 700,
-      //scrollBar: true,
 
       onLeave(origin, destination, direction, trigger) {
         if (destination.index >= 1) {
