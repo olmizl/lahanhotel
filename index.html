@@ -835,21 +835,22 @@
     const depth01 = $("#header .headerList .depth01");
     const depth02 = $("#header .headerList .depth02");
 
+    // ⭐ header mouse leave시 클래스 해제
     $("#header .headerList ").on("mouseleave", function () {
       depth02.removeClass("on");
       depth01.removeClass("color");
     });
 
+    // ⭐ tab메뉴 클릭시 slow 효과
     $("#header .width770span").on("click", function () {
       $("#header .width770").toggle("slow");
     });
 
+    // ⭐ 전체페이지에 one scroll시 페이지 별 이동 효과 기능
     $("#main").fullpage({
       navigation: true,
       navigationTooltips: ["Home", "Gyeongju", "Ulsan", "Mokpo", "Pohang", "Jeonju", "Seamarq", "Offers", "Instagram", "Club Lahan"],
       showActiveTooltip: true,
-
-      //scroll
       scrollingSpeed: 700,
 
       onLeave(origin, destination, direction, trigger) {
@@ -893,6 +894,7 @@
       },
     });
 
+    // ⭐ mainVisual 스와이퍼 기능
     new Swiper("#mainVisual", {
       effect: "fade",
       speed: 1000,
@@ -902,21 +904,25 @@
       },
     });
 
+    // ⭐ BOOK NOW 텍스트 클릭스 tab메뉴 toggle 기능
     $("#header .gnb h2").on("click", function () {
       $("#header .book").toggle();
     });
 
+    // ⭐ tab 메뉴 닫기 클릭시 toggle 기능
     $("#header .book .bookRight .bRspan").on("click", function () {
       $("#header .book").toggle();
       $("#header .book .bookLeft h1").css({ margin: "0px" });
     });
 
+    // ⭐ 페이지 첫 로딩시 구현되는 효과
     window.onload = function () {
       $("#header .book").hide();
       $("#fp-nav ul li:nth-child(2),#fp-nav ul li:nth-child(3),#fp-nav ul li:nth-child(4),#fp-nav ul li:nth-child(5),#fp-nav ul li:nth-child(6),#fp-nav ul li:nth-child(7)").addClass("fp-none");
       $("#fp-nav ").addClass("width80");
     };
 
+    // ⭐ tab메뉴 상세 tab 클릭시 화살표 반대 style 효과 구현
     $(".book .bookList li")
       .eq(0)
       .on("click", function () {
@@ -948,6 +954,7 @@
         $(this).toggleClass("arrow");
       });
 
+    // ⭐ .sectionista 페이지 gsap 효과 구현
     const instaTL = gsap.timeline({
       scrollTrigger: {
         trigger: ".sectioninsta",

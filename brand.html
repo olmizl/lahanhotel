@@ -241,6 +241,8 @@
     const brand02 = $("#brand02");
     const brand03 = $("#brand03");
     const brand04 = $("#brand04");
+
+    // ⭐ scroll시 구현 될 기능 구현
     $(window).on("scroll", function () {
       const scrolltop = $(window).scrollTop();
       const brand01Y = brand01.offset().top;
@@ -262,6 +264,7 @@
       }
     });
 
+    // ⭐ brand04 페이지 gsap 효과 기능
     const brand04TL = gsap.timeline({
       scrollTrigger: {
         trigger: "#brand04",
