@@ -139,9 +139,10 @@
         <div class="in">
           <div class="in_con">
             <h1>Book now</h1>
-            <button>
-              <!-- <p></p> -->
-            </button>
+            <div class="width770Btn">
+              <span></span>
+              <span></span>
+            </div>
           </div>
           <div class="in02">
             <div class="in_lan">
@@ -844,6 +845,10 @@
     // ⭐ tab메뉴 클릭시 slow 효과
     $("#header .width770span").on("click", function () {
       $("#header .width770").toggle("slow");
+    });
+    $(".width770Btn").on("click", function () {
+      $("#header .width770").toggle("slow");
+      // $(".width770").css("display", "none");
     });
 
     // ⭐ 전체페이지에 one scroll시 페이지 별 이동 효과 기능

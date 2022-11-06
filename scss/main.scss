@@ -977,10 +977,8 @@
   #header {
     .book {
       .bookLeft {
-        width: 550px;
-        h1 {
-          margin: 43px;
-        }
+        width: 100vw;
+
         .bookList {
           margin-left: 105px;
         }
@@ -1250,13 +1248,10 @@
 @media all and (max-width: 770px) {
   #fp-nav {
     left: 25%;
-    .fp-right {
-    }
   }
 
   .headerList02 {
-    width: 215px;
-    top: 25px;
+    display: none;
   }
   #mainVisual {
     .swiper-wrapper {
@@ -1278,63 +1273,12 @@
 }
 
 @media all and (max-width: 651px) {
-  .Con ul li.gj .contents .contents02 .aniimg {
-    .aniimg01 {
-      width: 109px;
-      height: 81px;
-    }
-    .aniimg02 {
-      width: 97px;
-      height: 157px;
-      left: 78px;
-    }
+  .Con ul li.gj .contents {
+    margin-top: 35%;
+    width: 80vw;
   }
-  .Con ul li.c .contents .contents02 .aniimg {
-    width: 153px;
-    height: 135px;
-  }
-
-  .Con#oh02 ul .us .contents02 .aniimg {
-    .aniimg01 {
-      width: 104px;
-      height: 76px;
-      left: 20px;
-    }
-    .aniimg02 {
-      width: 145px;
-      height: 98px;
-    }
-  }
-  .Con#oh03 ul .mp .contents02 .aniimg {
-    .aniimg01 {
-      width: 113px;
-      height: 75px;
-    }
-    .aniimg02 {
-      width: 110px;
-      height: 125px;
-    }
-  }
-  .Con#oh04 ul .ph .contents02 .aniimg {
-    .aniimg01 {
-      width: 95px;
-      height: 69px;
-    }
-    .aniimg02 {
-      width: 134px;
-      height: 92px;
-    }
-  }
-  .Con#oh05 ul .jj .contents02 .aniimg {
-    .aniimg01 {
-      width: 101px;
-      height: 70px;
-    }
-    .aniimg02 {
-      width: 89px;
-      height: 117px;
-      left: 68px;
-    }
+  .aniimg {
+    display: none;
   }
   .section02 {
     background-size: 450px 190px;
